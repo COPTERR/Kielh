@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+html,
+body {
+  background-color: transparent;
+  background: transparent;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.carousel_item {
+  max-width: 216px;
+  min-width: 216px;
+}
+
+.Carousel .detail_product {
+  font-family: "Prompt";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 14px;
+  text-align: center;
+  margin: 0;
+  margin-top: 8px;
+
+  /* Main / Black */
+
+  color: #000000;
+}
+.Carousel_btn {
+  font-family: "Prompt";
+  position: absolute;
+  width: 184px;
+  height: 35px;
+  left: 8px;
+  bottom: 8px;
+  border: 0;
+  /* Main / Retinol Purple */
+
+  background: #392d8c;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* Main / White */
+
+  color: #ffffff;
+}
