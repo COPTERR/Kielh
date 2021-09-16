@@ -21,13 +21,22 @@ const Protoys = styled.div`
     background: #392d8c;
   }
   .react-multi-carousel-track {
-    padding: 0 16px;
+    /* padding: 0 95px; */
     height: 300px;
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 320px;
+    @media (min-width: 330px) and (max-width: 340px) {
+      height: 293px;
+    }
+    @media (min-width: 351px) and (max-width: 369px) {
+      height: 310px;
+    }
+    @media (min-width: 370px) and (max-width: 380px) {
+      height: 335px;
     }
     @media (min-width: 391px) and (max-width: 464px) {
-      height: 377px;
+      height: 387px;
+    }
+    @media (min-width: 381px) and (max-width: 390px) {
+      height: 350px;
     }
   }
   .Card {
@@ -39,26 +48,50 @@ const Protoys = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 300px;
+    @media (min-width: 330px) and (max-width: 340px) {
+      height: 273px;
+    }
+    @media (min-width: 351px) and (max-width: 369px) {
+      height: 290px;
+    }
+    @media (min-width: 370px) and (max-width: 380px) {
+      height: 315px;
     }
     @media (min-width: 391px) and (max-width: 464px) {
-      height: 357px;
+      height: 365px;
+    }
+    @media (min-width: 381px) and (max-width: 390px) {
+      height: 330px;
     }
   }
   .img {
     height: 280px;
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 300px;
+    @media (min-width: 330px) and (max-width: 340px) {
+      height: 273px;
+    }
+    @media (min-width: 351px) and (max-width: 369px) {
+      height: 290px;
+    }
+    @media (min-width: 370px) and (max-width: 380px) {
+      height: 315px;
     }
     @media (min-width: 391px) and (max-width: 464px) {
-      height: 357px;
+      height: 365px;
+    }
+    @media (min-width: 381px) and (max-width: 390px) {
+      height: 330px;
     }
   }
 `;
 
 const CarouselCard = () => {
   const responsive = {
+    Small: {
+      breakpoint: { max: 329, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+      // partialVisibilityGutter: 215,
+    },
     iphone11pro: {
       breakpoint: { max: 340, min: 330 },
       items: 1,
@@ -84,7 +117,7 @@ const CarouselCard = () => {
       partialVisibilityGutter: 165,
     },
     other: {
-      breakpoint: { max: 464, min: 391 },
+      breakpoint: { max: 3000, min: 391 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
       partialVisibilityGutter: 215,
@@ -96,7 +129,8 @@ const CarouselCard = () => {
       <Protoys>
         <Carousel
           // additionalTransfrom={50}
-          partialVisible={true}
+          slidesToSlide={1}
+          partialVisible={false}
           arrows={false}
           autoPlaySpeed={3000}
           // centerMode
@@ -107,7 +141,6 @@ const CarouselCard = () => {
           focusOnSelect={false}
           infinite={false}
           itemClass="carousel_item"
-          keyBoardControl
           minimumTouchDrag={80}
           renderButtonGroupOutside={false}
           renderDotsOutside={false}

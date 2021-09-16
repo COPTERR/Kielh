@@ -4,13 +4,14 @@ html,
 body {
   background-color: transparent;
   background: transparent;
-  width: 100%;
+  width: 299;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 .carousel_item {
-  max-width: 216px;
-  min-width: 216px;
+  display: flex;
+  justify-content: center;
+  width: 216px;
 }
 
 .Carousel .detail_product {
