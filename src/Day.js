@@ -1,8 +1,21 @@
-import React from "react";
+import React,{ useLayoutEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Carousel.css";
 import styled from "styled-components";
+
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return size;
+}
 
 const Protoys = styled.div`
   .react-multi-carousel-dot button {
@@ -21,70 +34,25 @@ const Protoys = styled.div`
     background: #392d8c;
   }
   .react-multi-carousel-track {
-    /* padding: 0 95px; */
-    height: 300px;
-    @media (min-width: 330px) and (max-width: 340px) {
-      height: 293px;
-    }
-    @media (min-width: 351px) and (max-width: 369px) {
-      height: 310px;
-    }
-    @media (min-width: 370px) and (max-width: 380px) {
-      height: 335px;
-    }
-    @media (min-width: 391px) and (max-width: 464px) {
-      height: 387px;
-    }
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 350px;
-    }
+    height: ${(props) => props.element && `${props.element}px`}
   }
   .Card {
     width: 200px;
-    height: 280px;
     border-radius: 16px;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    @media (min-width: 330px) and (max-width: 340px) {
-      height: 273px;
-    }
-    @media (min-width: 351px) and (max-width: 369px) {
-      height: 290px;
-    }
-    @media (min-width: 370px) and (max-width: 380px) {
-      height: 315px;
-    }
-    @media (min-width: 391px) and (max-width: 464px) {
-      height: 365px;
-    }
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 330px;
-    }
+    height: ${(props) => props.element && `calc(${props.element}px - 18px)`}
   }
   .img {
-    height: 280px;
-    @media (min-width: 330px) and (max-width: 340px) {
-      height: 273px;
-    }
-    @media (min-width: 351px) and (max-width: 369px) {
-      height: 290px;
-    }
-    @media (min-width: 370px) and (max-width: 380px) {
-      height: 315px;
-    }
-    @media (min-width: 391px) and (max-width: 464px) {
-      height: 365px;
-    }
-    @media (min-width: 381px) and (max-width: 390px) {
-      height: 330px;
-    }
+    height: ${(props) => props.element && `calc(${props.element}px - 18px)`}
   }
 `;
 
 const CarouselCard = () => {
+  const [width, height] = useWindowSize();
   const responsive = {
     Small: {
       breakpoint: { max: 329, min: 0 },
@@ -126,7 +94,8 @@ const CarouselCard = () => {
 
   return (
     <div className="Carousel">
-      <Protoys>
+      
+      <Protoys element={height}>
         <Carousel
           // additionalTransfrom={50}
           slidesToSlide={1}
