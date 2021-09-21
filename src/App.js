@@ -6,7 +6,7 @@ import Night from "./Night";
 function App() {
   return (
     <div className="App">
-      <Night/>
+      <Night />
     </div>
   );
 }
