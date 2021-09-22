@@ -1,4 +1,4 @@
-import React,{ useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Carousel.css";
@@ -10,13 +10,12 @@ function useWindowSize() {
     function updateSize() {
       setSize([window.innerWidth, window.innerHeight]);
     }
-    window.addEventListener('resize', updateSize);
+    window.addEventListener("resize", updateSize);
     updateSize();
-    return () => window.removeEventListener('resize', updateSize);
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
   return size;
 }
-
 
 const Protoys = styled.div`
   .react-multi-carousel-dot button {
@@ -35,7 +34,7 @@ const Protoys = styled.div`
     background: white;
   }
   .react-multi-carousel-track {
-    height: ${(props) => props.element && `${props.element}px`}
+    height: ${(props) => props.element && `${props.element}px`};
   }
   .Card {
     width: 200px;
@@ -45,10 +44,10 @@ const Protoys = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: ${(props) => props.element && `calc(${props.element}px - 18px)`}
+    height: ${(props) => props.element && `calc(${props.element}px - 18px)`};
   }
   .img {
-    height: ${(props) => props.element && `calc(${props.element}px - 18px)`}
+    height: ${(props) => props.element && `calc(${props.element}px - 18px)`};
   }
 `;
 
@@ -139,7 +138,7 @@ const Night = () => {
           </div>
           <div className="Card">
             <img className="img" src="./img/pro_page04_night.png" />
-            <a href="https://bit.ly/38hQulf" target="_blank">
+            <a href="https://bit.ly/3gUTN6X" target="_blank">
               <button className="Carousel_btn">ช้อปเลย</button>
             </a>
           </div>
